@@ -19,19 +19,32 @@ Function Divisione( a,b:Real):Real;
 Begin
      Divisione:=a/b;
 End;
-Begin
-	Write('inserisci il primo numero: ');
-	Readln(x1);
-	Write('inserisci il secondo numero: ');
-	Readln(x2);
-    Writeln('');
-	Repeat
+Procedure inserisci_valori;
+	Begin
+		Write('inserisci il primo numero: ');
+		Readln(x1);
+		Write('inserisci il secondo numero: ');
+		Readln(x2);
+    	Writeln('');
+    End;
+Procedure menu;
+	Begin
 		writeln(' 0.uscita');
 		writeln(' 1. Somma');
 		writeln(' 2. Sottrazione');
 		writeln(' 3. Moltiplicazione');
 		writeln(' 4. Divisione');
         writeln('');
+    End;
+Procedure aspetta;
+	Begin
+		writeln('');
+        writeln('premi invio per continuare');
+    End;
+Begin
+	inserisci_valori;
+	Repeat
+		menu;
 		Readln(scelta);
 		case(scelta) of
 			1: writeln('somma: ',Somma(x1,x2):5:2);
@@ -39,8 +52,7 @@ Begin
 			3: writeln('prodotto: ',Moltiplicazione(x1,x2):5:2);
 			4: writeln('quoziente: ',Divisione(x1,x2):5:2);
 		End;
-        writeln('');
-        writeln('premi invio per continuare');
+        aspetta;
         readln;
 	Until(scelta = 0);
 End.

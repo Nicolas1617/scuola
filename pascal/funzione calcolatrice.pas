@@ -3,9 +3,9 @@ uses crt;
 var
 	scelta:integer;
 	x1,x2:Real;
-Function Somma( a,b:Real):Real;
+Function Addizione( a,b:Real):Real;
 Begin
-     Somma:=a+b;
+     Addizione:=a+b;
 End;
 Function Sottrazione( a,b:Real):Real;
 Begin
@@ -30,7 +30,7 @@ Procedure inserisci_valori;
 Procedure menu;
 	Begin
 		writeln(' 0.uscita');
-		writeln(' 1. Somma');
+		writeln(' 1. Addizione');
 		writeln(' 2. Sottrazione');
 		writeln(' 3. Moltiplicazione');
 		writeln(' 4. Divisione');
@@ -47,7 +47,7 @@ Begin
 		menu;
 		Readln(scelta);
 		case(scelta) of
-			1: writeln('somma: ',Somma(x1,x2):5:2);
+			1: writeln('somma: ',Addizione(x1,x2):5:2);
 			2: writeln('differenza: ',Sottrazione(x1,x2):5:2);
 			3: writeln('prodotto: ',Moltiplicazione(x1,x2):5:2);
 			4: writeln('quoziente: ',Divisione(x1,x2):5:2);

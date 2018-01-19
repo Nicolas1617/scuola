@@ -1,4 +1,4 @@
-program menu_di_scelta;
+program funzione_calcolatrice;
 uses crt;
 var
 	scelta:integer;

@@ -1,5 +1,7 @@
 program sequenza_di_fibonacci;
 uses crt;
+const
+	dmax=10;
 var
 	a,b,c,i:integer;
 Begin
@@ -7,7 +9,7 @@ Begin
 	b:=1;
 	write(a,' ');
 	write(b,' ');
-	for i:=1 to 10 do
+	for i:=1 to dmax do
 		Begin
 			c:=a+b;
 			a:=b;

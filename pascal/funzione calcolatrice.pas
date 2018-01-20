@@ -36,15 +36,20 @@ Procedure menu;
 		writeln(' 4. Divisione');
         writeln('');
     End;
+Procedure digita_numero;
+	Begin
+		write('digita il numero della operazioe scelta: ');
+	End;
 Procedure aspetta;
 	Begin
 		writeln('');
         writeln('premi invio per continuare');
     End;
 Begin
-	inserisci_valori;
 	Repeat
+		inserisci_valori;
 		menu;
+		digita_numero;
 		Readln(scelta);
 		case(scelta) of
 			1: writeln('somma: ',Addizione(x1,x2):5:2);

@@ -21,15 +21,15 @@ Begin
 End;
 Procedure inserisci_valori;
 	Begin
-		Write('inserisci il primo numero: ');
+		Write('Inserisci il primo numero: ');
 		Readln(x1);
-		Write('inserisci il secondo numero: ');
+		Write('Inserisci il secondo numero: ');
 		Readln(x2);
     	Writeln('');
     End;
 Procedure menu;
 	Begin
-		writeln(' 0.uscita');
+		writeln(' 0. Uscita');
 		writeln(' 1. Addizione');
 		writeln(' 2. Sottrazione');
 		writeln(' 3. Moltiplicazione');
@@ -38,12 +38,12 @@ Procedure menu;
     End;
 Procedure digita_numero;
 	Begin
-		write('digita il numero della operazioe scelta: ');
+		write('Digita il numero della operazioe scelta: ');
 	End;
 Procedure aspetta;
 	Begin
 		writeln('');
-        writeln('premi invio per continuare');
+        writeln('Premi invio per continuare');
     End;
 Begin
 	Repeat
@@ -52,10 +52,10 @@ Begin
 		digita_numero;
 		Readln(scelta);
 		case(scelta) of
-			1: writeln('somma: ',Addizione(x1,x2):5:2);
-			2: writeln('differenza: ',Sottrazione(x1,x2):5:2);
-			3: writeln('prodotto: ',Moltiplicazione(x1,x2):5:2);
-			4: writeln('quoziente: ',Divisione(x1,x2):5:2);
+			1: writeln('Somma: ',Addizione(x1,x2):5:2);
+			2: writeln('Differenza: ',Sottrazione(x1,x2):5:2);
+			3: writeln('Prodotto: ',Moltiplicazione(x1,x2):5:2);
+			4: writeln('Quoziente: ',Divisione(x1,x2):5:2);
 		End;
         aspetta;
         readln;

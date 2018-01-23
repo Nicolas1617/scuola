@@ -21,7 +21,7 @@ procedure menu;
 	End;
 procedure digita_numero;
 	Begin
-		write('Digita il numero della operazioe scelta: ');
+		write('Digita il numero della opzione scelta: ');
 	End;
 procedure aspetta;
 	Begin

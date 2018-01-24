@@ -17,7 +17,7 @@ procedure menu;
 		writeln(' 0. Uscita');
 		writeln(' 1. Lettura vettori');
 		writeln(' 2. Scrivi vettori');
-		writeln(' 3. Media dei numeri inseriti');
+		writeln(' 3. Media dei vettori inseriti');
 		writeln('');
 	End;
 procedure digita_numero;

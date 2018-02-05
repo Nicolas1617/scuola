@@ -1,15 +1,15 @@
 program gestione_vettori;
 uses crt;
 const
-     dmax=10;
+     dmax=3;
 type
-   vettori=Array[1..10] of integer;
+   vettori=Array[1..3] of integer;
 var
    V:vettori;
    Scelta:integer;
 procedure presentazione;
 	Begin
-	writeln('Benvenuti in questo programma che esegue la lettura e la scrittura di 10 numeri');
+	writeln('Benvenuti in questo programma che esegue la lettura e la scrittura di 3 numeri');
 	writeln('');
 	End;
 procedure menu;
@@ -18,6 +18,7 @@ procedure menu;
 		writeln(' 1. Lettura vettori');
 		writeln(' 2. Scrivi vettori');
 		writeln(' 3. Media dei vettori inseriti');
+		writeln(' 4. Cerca vettore');
 		writeln('');
 	End;
 procedure digita_numero;
@@ -34,10 +35,11 @@ var
    i:1..dmax;
 Begin
 	writeln('');
-	writeln('Inserisci i 10 numeri');
+	writeln('Inserisci i 3 numeri');
 	writeln('');
      for i:=1 to dmax do
      	Begin
+     	write('N[',i,']');
         read(x[i]);
         End;
     ClrScr;
@@ -66,6 +68,30 @@ Function media(vet : vettori):Real;
 			End;
 		media:=somma/dmax;
 	End;
+procedure cerca_vettori (var z:vettori);
+var
+	i:1..dmax;
+	n:integer;
+Begin
+	writeln('');
+	write('Inserisci il numero del vettore da cercare: ');
+	readln(n);
+	for i:=1 to dmax do
+		Begin
+			if z[i] = n then
+				Begin
+				writeln('');
+				write('Il numero cercato e presenente ed e: ',n);
+				writeln('');
+				End;
+			if z[i] <> n then
+				Begin
+				writeln('');
+				write('Il numero cercato non e presente.');
+				writeln('');
+				End;
+		End;
+End;
 Begin
 	presentazione;
 	Repeat
@@ -76,6 +102,7 @@ Begin
 	 	1: letturavettori (V);
 	 	2: scrivivettori (V);
 	 	3: writeln('Media: ',media(V):5:2);
+	 	4: cerca_vettori (V);
 	 End;
 	aspetta;
    	readln;

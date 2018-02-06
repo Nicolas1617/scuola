@@ -53,7 +53,7 @@ Begin
 	writeln('');
      for i:=1 to dmax do
          Begin
-         writeln(y[i]);
+         writeln('N[',i,']',y[i]);
          End;
 End;
 Function media(vet : vettori):Real;
@@ -67,7 +67,7 @@ Function media(vet : vettori):Real;
 			somma:=somma+vet[i];
 			End;
 		media:=somma/dmax;
-	End;
+		End;
 procedure cerca_vettori (var z:vettori);
 var
 	i:1..dmax;
@@ -81,13 +81,13 @@ Begin
 			if z[i] = n then
 				Begin
 				writeln('');
-				write('Il numero cercato e presenente ed e: ',n);
+				write('Il numero cercato e presenente in questa posizione ed e: ',n);
 				writeln('');
 				End;
 			if z[i] <> n then
 				Begin
 				writeln('');
-				write('Il numero cercato non e presente.');
+				write('Il numero cercato non e presente in questa posizione.');
 				writeln('');
 				End;
 		End;

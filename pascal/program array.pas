@@ -98,7 +98,6 @@ procedure ordine_crescente (var a:vettori);
 		i:1..dmax;
 		temp,j:integer;
 	Begin
-		temp:=0;
 		writeln('');
 		writeln('I numeri in ordine crescente sono:');
 		writeln('');

@@ -15,10 +15,11 @@ procedure presentazione;
 procedure menu;
 	Begin
 		writeln(' 0. Uscita');
-		writeln(' 1. Lettura vettori');
-		writeln(' 2. Scrivi vettori');
-		writeln(' 3. Media dei vettori inseriti');
-		writeln(' 4. Cerca vettore');
+		writeln(' 1. Lettura numeri');
+		writeln(' 2. Scrivi numeri');
+		writeln(' 3. Media dei numeri inseriti');
+		writeln(' 4. Cerca numero');
+		writeln(' 5. Oridine crescente');
 		writeln('');
 	End;
 procedure digita_numero;
@@ -35,7 +36,7 @@ var
    i:1..dmax;
 Begin
 	writeln('');
-	writeln('Inserisci i 3 numeri');
+	writeln('Inserisci i numeri');
 	writeln('');
      for i:=1 to dmax do
      	Begin
@@ -49,7 +50,7 @@ var
    i:1..dmax;
 Begin
 	writeln('');
-	writeln('I 10 vettori inseriti sono:');
+	writeln('I numeri inseriti sono:');
 	writeln('');
      for i:=1 to dmax do
          Begin
@@ -74,7 +75,7 @@ var
 	n:integer;
 Begin
 	writeln('');
-	write('Inserisci il numero del vettore da cercare: ');
+	write('Inserisci il numero da cercare: ');
 	readln(n);
 	for i:=1 to dmax do
 		Begin
@@ -92,6 +93,29 @@ Begin
 				End;
 		End;
 End;
+procedure ordine_crescente (var a:vettori);
+	var 
+		i:1..dmax;
+		temp,j:integer;
+	Begin
+		temp:=0;
+		writeln('');
+		writeln('I numeri in ordine crescente sono:');
+		writeln('');
+		for i:=1 to dmax do
+		Begin
+			for j:=i+1 to dmax do
+			Begin
+				if a[i]>a[j] then
+				Begin
+					temp:=a[j];
+					a[j]:=a[i];
+					a[i]:=temp;
+				End;
+			End;
+			writeln(a[i]);
+		End;
+	End;
 Begin
 	presentazione;
 	Repeat
@@ -103,6 +127,7 @@ Begin
 	 	2: scrivivettori (V);
 	 	3: writeln('Media: ',media(V):5:2);
 	 	4: cerca_vettori (V);
+	 	5: ordine_crescente(V);
 	 End;
 	aspetta;
    	readln;

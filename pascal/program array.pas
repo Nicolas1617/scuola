@@ -4,9 +4,31 @@ const
      dmax=3;
 type
    vettori=Array[1..3] of integer;
+   persona=record
+   eta:byte;
+   nome:string[40];
+   cognome:string[40];
+  End;
 var
    V:vettori;
    Scelta:integer;
+   Umano:persona;
+procedure leggi_umano (var u:persona);
+	Begin
+		writeln('');
+		write('Inserisic il nome della persona: ');
+		readln(u.nome);
+		write('Inserisci il cognome della persona: ');
+		readln(u.cognome);
+		write('Inserisci la eta della persona: ');
+		readln(u.eta);
+	End;
+procedure scrivi_umano (var p:persona);
+	Begin
+		writeln('Nome',p.nome);
+		writeln('Cognome',p.cognome);
+		writeln('Eta',p.eta);
+	End;
 procedure presentazione;
 	Begin
 	writeln('Benvenuti in questo programma che esegue la lettura e la scrittura di 3 numeri');
@@ -20,6 +42,7 @@ procedure menu;
 		writeln(' 3. Media dei numeri inseriti');
 		writeln(' 4. Cerca numero');
 		writeln(' 5. Oridine crescente');
+		writeln(' 6. Lettura caratteristiche uomo');
 		writeln('');
 	End;
 procedure digita_numero;
@@ -127,6 +150,7 @@ Begin
 	 	3: writeln('Media: ',media(V):5:2);
 	 	4: cerca_vettori (V);
 	 	5: ordine_crescente(V);
+	 	6: leggi_umano(Umano);
 	 End;
 	aspetta;
    	readln;

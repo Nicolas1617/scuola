@@ -25,9 +25,9 @@ procedure leggi_umano (var u:persona);
 	End;
 procedure scrivi_umano (var p:persona);
 	Begin
-		writeln('Nome',p.nome);
-		writeln('Cognome',p.cognome);
-		writeln('Eta',p.eta);
+		writeln('Nome: ',p.nome);
+		writeln('Cognome: ',p.cognome);
+		writeln('Eta: ',p.eta);
 	End;
 procedure presentazione;
 	Begin
@@ -43,6 +43,7 @@ procedure menu;
 		writeln(' 4. Cerca numero');
 		writeln(' 5. Oridine crescente');
 		writeln(' 6. Lettura caratteristiche uomo');
+		writeln(' 7. Scrivi caratteristiche uomo');
 		writeln('');
 	End;
 procedure digita_numero;
@@ -151,6 +152,7 @@ Begin
 	 	4: cerca_vettori (V);
 	 	5: ordine_crescente(V);
 	 	6: leggi_umano(Umano);
+	 	7: scrivi_umano(Umano);
 	 End;
 	aspetta;
    	readln;

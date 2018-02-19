@@ -5,14 +5,37 @@ const
 type
    vettori=Array[1..3] of integer;
    persona=record
-   eta:byte;
-   nome:string[40];
-   cognome:string[40];
-  End;
+   		eta:byte;
+   		nome:string[40];
+   		cognome:string[40];
+   	End;
+   	data=record
+   		giorno:1..31;
+   		mese:1..12;
+   		anno:1900..2100;
+   	End;
 var
    V:vettori;
    Scelta:integer;
    Umano:persona;
+   Anno:data;
+procedure leggi_data (var d:data);
+	Begin
+		writeln('');
+		writeln('Inserisci la data di nascita');
+		writeln('');
+		write('Inserisci il giorno: ');
+		readln(d.giorno);
+		write('Inserisci il mese: ');
+		readln(d.mese);
+		write('Inserisci l anno: ');
+		readln(d.anno);
+	End;
+procedure scrivi_data (var g:data);
+	Begin
+		writeln('');
+		writeln('Data di nascita: ',g.giorno,'/',g.mese,'/',g.anno);
+	End;
 procedure leggi_umano (var u:persona);
 	Begin
 		writeln('');
@@ -44,6 +67,8 @@ procedure menu;
 		writeln(' 5. Oridine crescente');
 		writeln(' 6. Lettura caratteristiche uomo');
 		writeln(' 7. Scrivi caratteristiche uomo');
+		writeln(' 8. Lettura data di nascita');
+		writeln(' 9. Scrittura data di nascita');
 		writeln('');
 	End;
 procedure digita_numero;
@@ -153,6 +178,8 @@ Begin
 	 	5: ordine_crescente(V);
 	 	6: leggi_umano(Umano);
 	 	7: scrivi_umano(Umano);
+	 	8: leggi_data(Anno);
+	 	9: scrivi_data(Anno);
 	 End;
 	aspetta;
    	readln;
